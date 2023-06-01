@@ -7,24 +7,21 @@
     <img [src]="profileImage" alt="profile" />
   </div>
 
-
-<mat-divider></mat-divider>
-
-<h2 matSubheader>เมนู</h2>
-
-<a mat-list-item routerLinkActive="list-item-active" routerLink="/">
- หน้าหลัก</a
->
-<a mat-list-item routerLinkActive="list-item-active" routerLink="/dairy">
-	ไดอารี่</a
-  >
-  
   <mat-divider></mat-divider>
 
+  <h2 matSubheader>เมนู</h2>
 
-	<h2 matSubheader>Tools</h2>
-	<a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-		<mat-icon>import_contacts</mat-icon></a
-		>
-		
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/" class="white-text">
+    หน้าหลัก</a
+  >
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/dairy" class="white-text">
+    ไดอารี่</a
+  >
+
+  <!-- <mat-divider></mat-divider>
+
+  <h2 matSubheader>Tools</h2>
+  <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
+    <mat-icon>import_contacts</mat-icon></a
+  > -->
 </mat-nav-list>

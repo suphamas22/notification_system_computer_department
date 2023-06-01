@@ -2,3 +2,8 @@
   ul li {
 	list-style: none;
 }
+
+.mat-toolbar {
+	background-color: #4f5054; /* Change to your desired color */
+  }
+  

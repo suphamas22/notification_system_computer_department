@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./dairy.component.css']
 })
 export class DairyComponent {
-
+  counter(n: number): number[] {
+    return Array(n);
+  }
+  
 }
