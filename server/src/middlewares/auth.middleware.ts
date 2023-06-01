@@ -2,10 +2,10 @@ import { Request, Response, NextFunction } from 'express';
 import jwt from 'jsonwebtoken';
 
 // Import the necessary interfaces and models
-import db from '../database/models';
+import db from '../models';
 
-import { JWT_SECRET } from '../common/constants/common.constants';
-import userService from 'modules/user/services/user.service';
+import { JWT_SECRET } from '../common/constants/common.constant';
+import userService from '../modules/user/services/user.service';
 
 const User = db.User
 

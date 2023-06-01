@@ -1,6 +1,6 @@
-import { JWT_SECRET } from './../common/constants/common.constants';
 import jwt from 'jsonwebtoken'
-import { JWT_EXPRIES } from './../common/constants/common.constants';
+import { JWT_SECRET } from '../common/constants/common.constant';
+import { JWT_EXPRIES } from '../common/constants/common.constant';
 
 export const createJwtToken = (claims: object): string => {
 

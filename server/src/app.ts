@@ -3,6 +3,15 @@ import { ALLOWED_ORIGINS, PREFIX } from "./common/constants/common.constant";
 import cors from 'cors';
 
 import articleController from "./modules/article/controllers/article.controller";
+import { UserAttributes } from "modules/user/types/user.types";
+
+declare global {
+	namespace Express {
+		interface Request {
+			user?: UserAttributes;
+		}
+	}
+}
 
 const App = () => {
 	const app: Express = express();
@@ -22,10 +31,10 @@ const App = () => {
 	// ))
 
 
-	
+
 	app.use(`${PREFIX}/articles`, articleController)
 
-	
+
 	app.get('/', (req: Request, res: Response) => {
 		// res.send(`<h3>Nodejs typescript restful service using Express with MVC pattern starter template was launched</h3>`);
 		res.redirect(`${PREFIX}/docs`)

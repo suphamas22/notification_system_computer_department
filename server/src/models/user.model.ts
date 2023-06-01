@@ -1,6 +1,6 @@
 "use strict";
 
-import { UserAttributes } from "../modules/user/types/user.model.types";
+import { UserAttributes, UserRole } from "../modules/user/types/user.types";
 import { Model, UUIDV4 } from "sequelize";
 
 module.exports = (sequelize: any, DataTypes: any) => {
@@ -14,7 +14,9 @@ module.exports = (sequelize: any, DataTypes: any) => {
     username!: string;
     password!: string;
     name!: string;
-    status!: number;
+    status!: boolean;
+    role!: UserRole;
+    department!: string;
 
     static associate(models: any) {
       // define association here
@@ -43,11 +45,18 @@ module.exports = (sequelize: any, DataTypes: any) => {
         allowNull: true
       },
       status: {
-        type: DataTypes.INTEGER,
-        defaultValue: 1,
-        allowNull: false,
-        unique: true,
+        type: DataTypes.BOOLEAN,
+        defaultValue: false,
       },
+      role: {
+        type: DataTypes.ENUM(UserRole.USER, UserRole.ADMIN), // Define the enum field with possible values
+        allowNull: false,
+        defaultValue: UserRole.USER
+      },
+      department: {
+        type: DataTypes.STRING(100),
+        allowNull: false
+      }
     },
     {
       sequelize,
