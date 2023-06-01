@@ -1,9 +1,10 @@
-import express, { Express, Request, Response } from "express"
-import { ALLOWED_ORIGINS, PREFIX } from "./common/constants/common.constant";
+import express, { Express, Request, Response, json } from "express"
+import { ALLOWED_ORIGINS } from "./common/constants/common.constant";
 import cors from 'cors';
 
 import articleController from "./modules/article/controllers/article.controller";
 import { UserAttributes } from "modules/user/types/user.types";
+import userRouter from './modules/user/routes/user.route'
 
 declare global {
 	namespace Express {
@@ -30,14 +31,14 @@ const App = () => {
 	// 	}
 	// ))
 
-
-
-	app.use(`${PREFIX}/articles`, articleController)
+	app.use(json());
+	app.use('/users', userRouter)
+	// app.use(`${PREFIX}/articles`, articleController)
 
 
 	app.get('/', (req: Request, res: Response) => {
-		// res.send(`<h3>Nodejs typescript restful service using Express with MVC pattern starter template was launched</h3>`);
-		res.redirect(`${PREFIX}/docs`)
+		res.send(`<h3>Nodejs typescript restful service using Express with MVC pattern starter template was launched</h3>`);
+
 	});
 
 

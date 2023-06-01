@@ -10,14 +10,11 @@ import { isAllValuesUndefined } from '../../../common/utils';
 const User = db.User
 
 
-export const login = async (identifier: string, password: string): Promise<LoginResponse> => {
+export const login = async (username: string, password: string): Promise<LoginResponse> => {
 	try {
 		const user = await User.findOne({
 			where: {
-				[Op.or]: [
-					{ username: { [Op.eq]: identifier } },
-					{ email: { [Op.eq]: identifier } },
-				],
+				username
 			}, raw: true
 		});
 		if (!user) {
@@ -37,7 +34,7 @@ export const login = async (identifier: string, password: string): Promise<Login
 	}
 };
 
-export const createUser = async (user: UserAttributes): Promise<UserAttributes> => {
+export const createUser = async (user: UserAttributes): Promise<any> => {
 	try {
 		const { username, password } = user;
 
@@ -53,11 +50,13 @@ export const createUser = async (user: UserAttributes): Promise<UserAttributes> 
 		}
 
 		const hashedPassword = await hashPassword(password!);
-		
-		const response = await User.create({
-			...user
-		}, { password: hashedPassword });
-
+		// console.log(hashPassword)
+		const newUser = {
+			...user, 
+			password: hashedPassword 
+		}
+		const response = await User.create(newUser);
+		delete response['dataValues'].password;
 		return response;
 	} catch (error) {
 		console.error(error);

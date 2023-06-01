@@ -55,7 +55,7 @@ export const authMiddleware = async (req: Request, res: Response, next: NextFunc
 
 export const roleMiddleware = (role: string) => {
   return (req: Request, res: Response, next: NextFunction): void => {
-    if (!("user" in req)) {
+    if (!("USER" in req)) {
       throw new Error("Request object without user found unexpectedly");
     }
 

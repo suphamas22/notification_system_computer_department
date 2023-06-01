@@ -13,10 +13,8 @@ export const handleCreateUser = async (req: Request, res: Response): Promise<voi
 
 export const handleRegister = async (req: Request, res: Response): Promise<void> => {
 	try {
-		const { username, password, name } = req.body;
-	
 		// Create a new user
-		const newUser = await userService.createUser({ username, password, name });
+		const newUser = await userService.createUser(req.body);
 	
 		res.status(201).json(newUser);
 	  } catch (error) {
@@ -104,6 +102,7 @@ export default {
 	handleCreateUser,
 	handleDeleteUser,
 	handleUpdateUser,
-	handleGetOneUsers
+	handleGetOneUsers,
+	handleRegister
 
 }
