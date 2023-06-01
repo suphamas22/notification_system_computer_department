@@ -11,6 +11,7 @@ const routes: Routes = [
     component: MainLayoutComponent,
     children: [
       // Define your child routes within the main layout
+      { path: '', pathMatch: 'full', redirectTo: 'dairy' },
       { path: 'dairy', component: DairyComponent },
       { path: 'notification', component: NotificationComponent },
       { path: 'user', component: UserComponent },
