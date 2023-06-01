@@ -1,0 +1,19 @@
+ALLOWED_ORIGINS = ['http:localhost:3000']
+
+DB_DATABASE_DEV = sapms_db_dev
+DB_USERNAME_DEV = root
+DB_PASSWORD_DEV = ""
+DB_DIALECT_DEV = mysql
+DB_HOST_DEV = localhost
+
+DB_DATABASE_PROD = sapms_db_prod
+DB_USERNAME_PROD = root
+DB_PASSWORD_PROD = ""
+DB_DIALECT_PROD = mysql
+DB_HOST_PROD = 
+
+DB_DATABASE_TEST = sapms_db_test
+DB_USERNAME_TEST = root
+DB_PASSWORD_TEST = ""
+DB_DIALECT_TEST = mysql
+DB_HOST_TEST = localhost
