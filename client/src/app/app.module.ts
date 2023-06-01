@@ -8,6 +8,7 @@ import { LayoutModule } from './layout/layout.module';
 import { DairyComponent } from './dairy/dairy.component';
 import { UserComponent } from './user/user.component';
 import { NotificationComponent } from './notification/notification.component';
+import { DairyModule } from './dairy/dairy.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { NotificationComponent } from './notification/notification.component';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    LayoutModule // Import the LayoutModule
+    LayoutModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
