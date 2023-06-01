@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MainLayoutComponent } from './main-layout/main-layout.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -12,6 +13,7 @@ import { MainLayoutComponent } from './main-layout/main-layout.component';
     CommonModule,
     MatSidenavModule,
     MatListModule,
+    RouterModule
   ],
   exports: [
     MainLayoutComponent
