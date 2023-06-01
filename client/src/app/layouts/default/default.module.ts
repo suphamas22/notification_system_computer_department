@@ -5,19 +5,19 @@ import { DashboardComponent } from 'src/app/modules/dashboard/dashboard.componen
 import { RouterModule } from '@angular/router';
 import { DairyComponent } from 'src/app/modules/dairy/dairy.component';
 import { SharedModule } from 'src/app/shared/shared.module';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
     DairyComponent
-
   ],
   imports: [
     CommonModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    MatSidenavModule
 
   ]
 })
