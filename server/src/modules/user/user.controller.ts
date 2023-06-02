@@ -1,6 +1,6 @@
 
 import { Request, Response, Express } from 'express';
-import userService from './../services/user.service';
+import userService from './user.service';
 
 export const handleCreateUser = async (req: Request, res: Response): Promise<void> => {
 	try {

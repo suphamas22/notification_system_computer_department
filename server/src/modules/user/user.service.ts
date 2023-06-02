@@ -1,10 +1,10 @@
 
-import { hashPassword, verifyPassword } from '../../../common/utils/password-hasher';
-import db from "../../../models"
-import { LoginResponse, UserAttributes } from '../types/user.types';
+import { hashPassword, verifyPassword } from '../../common/utils/password-hasher';
+import db from "../../models"
+import { LoginResponse, UserAttributes } from './types/user.types';
 import sequelize, { Op } from 'sequelize';
-import { createJwtToken } from '../../../middlewares/jwt.middleware.';
-import { isAllValuesUndefined } from '../../../common/utils';
+import { createJwtToken } from '../../middlewares/jwt.middleware.';
+import { isAllValuesUndefined } from '../../common/utils';
 
 
 const User = db.User

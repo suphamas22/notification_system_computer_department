@@ -1,6 +1,6 @@
 "use strict";
 
-import { DairyAttributes } from "../modules/dairy/types/dairy.model.types";
+import { DairyAttributes } from "../modules/dairy/types/dairy.types";
 import { Model } from "sequelize";
 
 module.exports = (sequelize: any, DataTypes: any) => {
