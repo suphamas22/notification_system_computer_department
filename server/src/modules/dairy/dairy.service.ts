@@ -39,12 +39,14 @@ export const getAllDairy = async (userId: number): Promise<DairyAttributes[]> =>
     }
 }
 
-export const updateDairy = async (id: string, updateDairy: UserAttributes): Promise<UserAttributes> => {
+export const updateDairy = async (id: string, userId: number, updateDairy: UserAttributes): Promise<UserAttributes> => {
     try {
-        const isDairyExist = await DairyModel.findByPk(id);
+        const isDairyExist = await DairyModel.findOne({
+            where: { id, userId }
+        });
         if (isDairyExist) {
             const response = await DairyModel.update({ ...updateDairy }, {
-                where: { id }
+                where: { id, userId }
             })
             return response
         } else {
@@ -55,12 +57,14 @@ export const updateDairy = async (id: string, updateDairy: UserAttributes): Prom
     }
 }
 
-export const deleteDairy = async (id: string): Promise<UserAttributes> => {
+export const deleteDairy = async (id: string, userId: number): Promise<UserAttributes> => {
     try {
-        const isDairyExist = await DairyModel.findByPk(id);
+        const isDairyExist = await DairyModel.findOne({
+            where: { id, userId }
+        });
         if (isDairyExist) {
             const response = await DairyModel.destroy({
-                where: { id }
+                where: { id, userId }
             })
             return response
         } else {

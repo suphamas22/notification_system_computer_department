@@ -53,9 +53,47 @@ export const handleGetAllDairy = async (req: Request, res: Response) => {
     }
 }
 
+export const handleUpdateDairy = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+        const userId = req.user?.id
+        const updateBody = req.body;
+        const payload = await dairyService.updateDairy(id, userId!, updateBody);
+        res.status(200).json({
+            msg:"update dairy was successfully",
+            payload
+        })
+    } catch (error) {
+        res.status(400).json({
+            msg: "update dairy was failed",
+            payload: {}
+        })
+    }
+}
+
+export const handleDeleteDairy = async (req: Request, res: Response) => {
+    try {
+        const id = req.params.id
+        const userId = req.user?.id
+        const payload = await dairyService.deleteDairy(id, userId!);
+        res.status(200).json({
+            msg:"delete dairy was successfully",
+            payload
+        })
+    } catch (error) {
+        res.status(400).json({
+            msg: "delete dairy was failed",
+            payload: {}
+        })
+    }
+}
+
+
 
 export default {
     handleCreateDairy,
     handleGetOneDairy,
-    handleGetAllDairy
+    handleGetAllDairy,
+    handleUpdateDairy,
+    handleDeleteDairy
 }
