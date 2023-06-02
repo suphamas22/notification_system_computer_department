@@ -5,8 +5,9 @@ import { Request, Response } from "express";
 
 export const handleCreateDairy = async (req: Request, res: Response) => {
     try {
+        const userId = req.user?.id;
         const body = req.body;
-        const payload = await dairyService.createDairy(body);
+        const payload = await dairyService.createDairy({...body, userId});
         res.status(200).json({
             msg: "create dairy was successfully",
             payload
@@ -22,7 +23,8 @@ export const handleCreateDairy = async (req: Request, res: Response) => {
 export const handleGetOneDairy = async (req: Request, res: Response) => {
     try {
         const id = req.params.id
-        const payload = await dairyService.getOneDairy(id);
+        const userId= req.user?.id;
+        const payload = await dairyService.getOneDairy(id, userId!);
         res.status(200).json({
             msg:"get one dairy was successfully",
             payload
@@ -37,7 +39,8 @@ export const handleGetOneDairy = async (req: Request, res: Response) => {
 
 export const handleGetAllDairy = async (req: Request, res: Response) => {
     try {
-        const payload = await dairyService.getAllDairy();
+        const userId = req.user?.id
+        const payload = await dairyService.getAllDairy(userId!);
         res.status(200).json({
             msg:"get all dairy was successfully",
             payload
@@ -53,5 +56,6 @@ export const handleGetAllDairy = async (req: Request, res: Response) => {
 
 export default {
     handleCreateDairy,
-    handleGetOneDairy
+    handleGetOneDairy,
+    handleGetAllDairy
 }

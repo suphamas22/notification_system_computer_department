@@ -26,6 +26,7 @@ export const login = async (username: string, password: string): Promise<LoginRe
 		if (!passwordMatch) {
 			throw new Error('Invalid username or password');
 		}
+		
 		// const token = jwt.sign({ id: user.id, role: user.role, name: user.name }, "test", { expiresIn: '1h' });
 		const token: string = createJwtToken({ id: user.id, role: user.role, name: user.name })
 		return { token };

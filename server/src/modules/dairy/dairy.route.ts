@@ -6,6 +6,6 @@ const router = express.Router();
 
 router.post('/', authMiddleware, dairyController.handleCreateDairy)
 router.get('/:id', authMiddleware, dairyController.handleGetOneDairy)
-router.get('/', authMiddleware, dairyController.handleGetOneDairy)
+router.get('/', authMiddleware, dairyController.handleGetAllDairy)
 
 export default router

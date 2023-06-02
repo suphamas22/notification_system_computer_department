@@ -13,18 +13,26 @@ export const createDairy = async (body: DairyAttributes): Promise<DairyAttribute
     }
 }
 
-export const getOneDairy = async (id: string): Promise<DairyAttributes> => {
+export const getOneDairy = async (id: string, userId: number): Promise<DairyAttributes> => {
     try {
-        const response = await DairyModel.findByPk(id)
-        return response
+        const response = await DairyModel.findOne({
+            where: { id, userId }
+        })
+        if (response) {
+            return response
+        } else {
+            throw new Error();
+        }
     } catch (error) {
         throw new Error();
     }
 }
 
-export const getAllDairy = async (): Promise<DairyAttributes[]> => {
+export const getAllDairy = async (userId: number): Promise<DairyAttributes[]> => {
     try {
-        const response = await DairyModel.findAll();
+        const response = await DairyModel.findAll({
+            where: { userId }
+        });
         return response
     } catch (error) {
         throw new Error()
