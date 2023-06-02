@@ -3,6 +3,7 @@ import { ALLOWED_ORIGINS } from "./common/constants/common.constant";
 import cors from 'cors';
 import { UserAttributes } from "modules/user/user.types";
 import userRouter from './modules/user/user.route'
+import dairyRoute from "./modules/dairy/dairy.route"
 
 declare global {
 	namespace Express {
@@ -30,7 +31,8 @@ const App = () => {
 	// ))
 
 	app.use(json());
-	app.use('/users', userRouter)
+	app.use('/user', userRouter)
+	app.use('/dairy', dairyRoute)
 	// app.use(`${PREFIX}/articles`, articleController)
 
 
