@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DairyComponent } from './modules/dairy/dairy.component';
+import { LoginComponent } from './modules/login/login.component';
 
 const routes: Routes = [
   {
@@ -14,8 +15,11 @@ const routes: Routes = [
     }, {
       path: 'dairy',
       component: DairyComponent
-    }]
-  }
+    }
+    ],
+
+  },
+  { path: 'login', component: LoginComponent },
 ];
 
 @NgModule({

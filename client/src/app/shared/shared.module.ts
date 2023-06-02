@@ -11,11 +11,12 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from "@angular/material/menu"
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
+import { LoginComponent } from '../modules/login/login.component';
 @NgModule({
   declarations: [
     HeaderComponent,
     FooterComponent,
-    SidebarComponent
+    SidebarComponent,
   ],
   imports: [
     CommonModule,

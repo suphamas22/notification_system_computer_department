@@ -6,6 +6,7 @@ import { RouterModule } from '@angular/router';
 import { DairyComponent } from 'src/app/modules/dairy/dairy.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { LoginComponent } from 'src/app/modules/login/login.component';
 
 @NgModule({
   declarations: [
