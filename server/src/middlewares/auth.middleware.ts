@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken';
 import db from '../models';
 
 import { JWT_SECRET } from '../common/constants/common.constant';
-import userService from '../modules/user/services/user.service';
+import userService from '../modules/user/user.service';
 
 const User = db.User
 

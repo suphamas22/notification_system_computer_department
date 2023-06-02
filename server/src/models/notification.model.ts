@@ -1,6 +1,6 @@
 "use strict";
 
-import { NotificationAttributes } from "../modules/notification/types/notifacation.model";
+import { NotificationAttributes } from "../modules/notification/notification.types";
 
 import { Model } from "sequelize";
 

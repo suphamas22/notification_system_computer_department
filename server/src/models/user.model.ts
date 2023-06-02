@@ -1,6 +1,6 @@
 "use strict";
 
-import { UserAttributes, UserRole } from "../modules/user/types/user.types";
+import { UserAttributes, UserRole } from "../modules/user/user.types";
 import { Model, UUIDV4 } from "sequelize";
 
 module.exports = (sequelize: any, DataTypes: any) => {
