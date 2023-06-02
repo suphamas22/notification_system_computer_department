@@ -13,10 +13,11 @@ module.exports = (sequelize: any, DataTypes: any) => {
     name!: string;
     content!: string;
     datetime!: Date;
+    userId!: string;
 
     static associate(models: any) {
       // define association here
-      // User.hasMany(models.Article);
+      Dairy.belongsTo(models.User);
     }
   }
   Dairy.init(
@@ -39,6 +40,12 @@ module.exports = (sequelize: any, DataTypes: any) => {
         type: DataTypes.DATE,
         allowNull: false
       },
+      userId: {
+        type: DataTypes.INTEGER,
+        unique: false,
+        allowNull: false,
+				field: 'user_id'
+      }
     },
     {
       sequelize,
