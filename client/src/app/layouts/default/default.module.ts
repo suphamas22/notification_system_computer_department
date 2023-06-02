@@ -7,19 +7,20 @@ import { DairyComponent } from 'src/app/modules/dairy/dairy.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { LoginComponent } from 'src/app/modules/login/login.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
-    DairyComponent
+    DairyComponent,
+    LoginComponent
   ],
   imports: [
     CommonModule,
     RouterModule,
     SharedModule,
-    MatSidenavModule
-
   ]
 })
 export class DefaultModule { }

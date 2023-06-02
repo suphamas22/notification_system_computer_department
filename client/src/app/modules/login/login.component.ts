@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Inject, NgZone, OnInit } from '@angular/core';
 import { AuthService } from "../../services/auth-service.service"
 import { loginInterface } from 'src/app/types/user.type';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,9 @@ export class LoginComponent {
   public password: string;
 
   constructor(
-    private authService: AuthService
-    
+    private authService: AuthService,
+    private router: Router,
+    private ngZone: NgZone,
     ) {
     this.username = '';
     this.password = '';
@@ -22,14 +24,12 @@ export class LoginComponent {
   }
 
   login() {
-    // Handle login logic here, such as making API calls, validating credentials, etc.
-    // console.log('Username:', this.username);
-    // console.log('Password:', this.password);
     this.authService.login(
       this.username, this.password
     ).subscribe({
       next(resp: loginInterface) {
-        console.log(resp.token)
+        localStorage.setItem('token', resp.token);
+        // this.ngZone.run(() => this.router.navigateByUrl('/dairy')); 
       }
     })
   }

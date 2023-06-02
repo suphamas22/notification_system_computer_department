@@ -15,11 +15,15 @@ const routes: Routes = [
     }, {
       path: 'dairy',
       component: DairyComponent
-    }
+    },
+    {
+      path: 'login',
+      component: LoginComponent
+    },
     ],
 
   },
-  { path: 'login', component: LoginComponent },
+
 ];
 
 @NgModule({

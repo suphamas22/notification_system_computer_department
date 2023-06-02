@@ -12,6 +12,9 @@ import { MatMenuModule } from "@angular/material/menu"
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
 import { LoginComponent } from '../modules/login/login.component';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatCardModule } from '@angular/material/card';
+import { MatFormFieldModule } from '@angular/material/form-field';
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -27,6 +30,9 @@ import { LoginComponent } from '../modules/login/login.component';
     FlexLayoutModule,
     MatMenuModule,
     MatListModule,
+    MatSidenavModule,
+    MatCardModule,
+    MatFormFieldModule,
     RouterModule
   ],
   exports: [
