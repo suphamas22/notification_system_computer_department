@@ -10,6 +10,7 @@ import { DefaultModule } from './layouts/default/default.module';
 import { LoginComponent } from './modules/login/login.component';
 import {MatCardModule} from '@angular/material/card';
 import { LoginModule } from './modules/login/login.module';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { LoginModule } from './modules/login/login.module';
     AppRoutingModule,
     BrowserAnimationsModule,
     DefaultModule,
-    LoginModule
+    LoginModule,
+    HttpClientModule
     
   ],
   providers: [],

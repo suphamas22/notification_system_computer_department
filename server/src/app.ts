@@ -15,7 +15,10 @@ declare global {
 
 const App = () => {
 	const app: Express = express();
-
+	app.use(cors({
+		origin: '*'
+	  }));
+	  
 	// const allowedOrigins: string[] = ALLOWED_ORIGINS
 
 	// app.use(cors(

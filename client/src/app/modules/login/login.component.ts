@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { AuthService } from "../../services/auth-service.service"
+import { loginInterface } from 'src/app/types/user.type';
 
 @Component({
   selector: 'app-login',
@@ -11,7 +12,10 @@ export class LoginComponent {
   public username: string;
   public password: string;
 
-  constructor(private authService: AuthService) {
+  constructor(
+    private authService: AuthService
+    
+    ) {
     this.username = '';
     this.password = '';
 
@@ -19,13 +23,13 @@ export class LoginComponent {
 
   login() {
     // Handle login logic here, such as making API calls, validating credentials, etc.
-    console.log('Username:', this.username);
-    console.log('Password:', this.password);
+    // console.log('Username:', this.username);
+    // console.log('Password:', this.password);
     this.authService.login(
       this.username, this.password
     ).subscribe({
-      next(resp) {
-        console.log(resp)
+      next(resp: loginInterface) {
+        console.log(resp.token)
       }
     })
   }
