@@ -1,9 +1,43 @@
-
-  ul li {
-	list-style: none;
+ul li {
+  list-style: none;
 }
 
 .mat-toolbar {
-	background-color: #4f5054; /* Change to your desired color */
-  }
-  
+  background-color: #4f5054; /* Change to your desired color */
+}
+
+.header-spacer {
+  flex: 1 1 auto;
+}
+
+section {
+  display: table;
+}
+
+.header-label {
+  display: table-cell;
+  font-size: 14px;
+  margin-left: 8px;
+  min-width: 120px;
+}
+
+.header-button-row {
+  display: table-cell;
+  max-width: 600px;
+}
+
+.header-button-row .mat-mdc-button-base {
+  margin: 8px 8px 8px 0;
+}
+
+.header-flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.header-button-container {
+  display: flex;
+  justify-content: center;
+  width: 120px;
+}

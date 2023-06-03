@@ -1,27 +1,42 @@
-<!-- <mat-card>
-  <mat-card-title>Login</mat-card-title>
-  <mat-card-content>
-    <form>
-      <mat-form-field>
-        <input
-          matInput
-          placeholder="Username"
-          [(ngModel)]="username"
-          name="username"
-          required
-        />
-      </mat-form-field>
-      <mat-form-field>
-        <input
-          matInput
-          type="password"
-          placeholder="Password"
-          [(ngModel)]="password"
-          name="password"
-          required
-        />
-      </mat-form-field>
-      <button mat-raised-button color="primary" (click)="login()">Login</button>
-    </form>
-  </mat-card-content>
-</mat-card> -->
+<div class="controllfrom">
+  <div class="mat-elevation-z3">
+    <div class="form-one">
+      <form class="example-form">
+        <div class="login__label">
+          <p>Login</p>
+        </div>
+
+        <div class="form">
+          <form class="login__form">
+            <mat-form-field class="login__full__width">
+              <mat-label>Username</mat-label>
+              <input
+                type="text"
+                matInput
+                [(ngModel)]="username"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </mat-form-field>
+
+            <mat-form-field class="login__full__width">
+              <mat-label>Password</mat-label>
+              <input
+                type="password"
+                matInput
+                [(ngModel)]="password"
+                [ngModelOptions]="{ standalone: true }"
+              />
+            </mat-form-field>
+           <div class="login__button">
+            <button mat-raised-button color="primary" (click)="login()">
+                เข้าสู่ระบบ
+              </button>
+           </div>
+
+          </form>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>

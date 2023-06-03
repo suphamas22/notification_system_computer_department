@@ -11,10 +11,10 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatMenuModule } from "@angular/material/menu"
 import { MatListModule } from '@angular/material/list';
 import { RouterModule } from '@angular/router';
-import { LoginComponent } from '../modules/login/login.component';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
+
+
 @NgModule({
   declarations: [
     HeaderComponent,
@@ -32,8 +32,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatListModule,
     MatSidenavModule,
     MatCardModule,
-    MatFormFieldModule,
-    RouterModule
+    RouterModule,
+  
   ],
   exports: [
     HeaderComponent,
