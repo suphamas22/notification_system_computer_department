@@ -5,15 +5,5 @@
   
   .profile-card {
 	text-align: center;
-	padding: 0 20px 20px 20px;
-	vertical-align: middle;
-	margin-right: 20px;
-  }
-  
-  .profile-card img {
-	width: 100px;
-	height: 100px;
-	object-fit: cover;
-	border-radius: 50%;
   }
   

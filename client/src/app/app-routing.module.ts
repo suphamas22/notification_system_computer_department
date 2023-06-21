@@ -4,6 +4,8 @@ import { DefaultComponent } from './layouts/default/default.component';
 import { DashboardComponent } from './modules/dashboard/dashboard.component';
 import { DairyComponent } from './modules/dairy/dairy.component';
 import { LoginComponent } from './modules/login/login.component';
+import { RegisterComponent } from './modules/register/register.component';
+import { IndexComponent } from './modules/index/index.component';
 
 const routes: Routes = [
   {
@@ -20,6 +22,15 @@ const routes: Routes = [
       path: 'login',
       component: LoginComponent
     },
+    {
+      path: 'register',
+      component: RegisterComponent
+    },
+    {
+      path: 'index',
+      component: IndexComponent
+    },
+
     ],
 
   },

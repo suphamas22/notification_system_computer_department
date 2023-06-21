@@ -16,12 +16,17 @@ import {MatInputModule} from '@angular/material/input';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatButtonModule} from '@angular/material/button';
 
+import { FlatpickrModule } from 'angularx-flatpickr';
+import { CalendarModule, DateAdapter } from 'angular-calendar';
+import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
+import { NgbModalModule } from '@ng-bootstrap/ng-bootstrap';
+
 @NgModule({
   declarations: [
     DefaultComponent,
     DashboardComponent,
     DairyComponent,
-    LoginComponent
+    LoginComponent,
   ],
   imports: [
     CommonModule,
@@ -30,8 +35,16 @@ import {MatButtonModule} from '@angular/material/button';
     MatCardModule,
     FormsModule,
     MatSidenavModule,
-    MatFormFieldModule, MatInputModule, MatSelectModule,
-    MatButtonModule
+    MatFormFieldModule, 
+    MatInputModule, 
+    MatSelectModule,
+    MatButtonModule,
+    NgbModalModule,
+    FlatpickrModule.forRoot(),
+    CalendarModule.forRoot({
+      provide: DateAdapter,
+      useFactory: adapterFactory,
+    }),
  
   ]
 })

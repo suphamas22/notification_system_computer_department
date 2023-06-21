@@ -3,36 +3,27 @@
     <div class="form-one">
       <form class="example-form">
         <div class="login__label">
-          <p>Login</p>
+          <p>LOGIN</p>
         </div>
-
+        <img src="../../../assets/images/icon_profilecircled_.png" class="center" width="150" height="150">
         <div class="form">
           <form class="login__form">
-            <mat-form-field class="login__full__width">
-              <mat-label>Username</mat-label>
-              <input
-                type="text"
-                matInput
-                [(ngModel)]="username"
-                [ngModelOptions]="{ standalone: true }"
-              />
-            </mat-form-field>
+            <label for="usernameField" class="usernamelabel label">Username</label>
+            <input type="text" placeholder="@" id="usernameField" required="required">
 
-            <mat-form-field class="login__full__width">
-              <mat-label>Password</mat-label>
-              <input
-                type="password"
-                matInput
-                [(ngModel)]="password"
-                [ngModelOptions]="{ standalone: true }"
-              />
-            </mat-form-field>
+            <label for="usernameField" class="usernamelabel label">Username</label>
+            <input type="text" placeholder="* * * * * * * *" id="usernameField" required="required">
+
            <div class="login__button">
-            <button mat-raised-button color="primary" (click)="login()">
-                เข้าสู่ระบบ
+            <button class="color-one" mat-raised-button  (click)="login()">
+                REGISTER
               </button>
+              
+            <button mat-raised-button color="primary" (click)="login()">
+                LOGIN
+              </button>
+              
            </div>
-
           </form>
         </div>
 
